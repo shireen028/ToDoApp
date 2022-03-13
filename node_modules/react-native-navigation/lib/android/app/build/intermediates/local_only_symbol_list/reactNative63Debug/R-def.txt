@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+anim slide_down
+anim slide_up
+dimen margin
+drawable ic_arrow_back_black_24dp
+drawable ic_arrow_back_black_rtl_24dp
+id bottomTabs
+id fab_bottom_margin
+id fragment_screen_content
+id original_bottom
+id original_index_in_parent
+id original_layout_params
+id original_left
+id original_parent
+id original_pivot_x
+id original_pivot_y
+id original_right
+id original_top
+id original_z_index
+id react_root_view
+id topBarBackgroundComponent
+string drawer_close
+string drawer_open
+style TopBar
+style Widget.Support.CoordinatorLayout
