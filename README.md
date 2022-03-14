@@ -29,7 +29,7 @@ A basic todo app built in react-native using Typescript. Basic functionality inc
 
 #### Jest Unit Testing
 
-You can find the test files in the screens and components folder.
+You can find the test files in the screens and components folders.
 Run `yarn jest` to run the test files.
 
 
