@@ -18,7 +18,7 @@ export default function App() {
       25,
       'black',
     );
-    const filter = await Ionicons.getImageSource('filter-outline', 25, 'black');
+    const filter = await Ionicons.getImageSourceSync('filter-outline', 25, 'black');
     Navigation.setRoot({
       root: {
         stack: {
@@ -29,7 +29,7 @@ export default function App() {
                 options: {
                   topBar: {
                     title: {
-                      text: 'Todo',
+                      text: 'My Todo List',
                     },
                     rightButtons: [
                       {

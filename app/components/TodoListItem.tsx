@@ -1,11 +1,10 @@
-import React, {memo} from 'react';
-import {StyleSheet} from 'react-native';
-import {ListItem,} from 'react-native-elements';
-import {Icon} from 'react-native-elements';
+import React, { memo } from 'react';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { ListItem, Icon } from 'react-native-elements';
 import OptionsMenu from 'react-native-option-menu';
-
-import {Todo} from '../types';
-import {useDispatch} from 'react-redux';
+import * as actions from 'actions';
+import { Todo } from '../types';
+import { useDispatch } from 'react-redux';
 
 type Props = {
   todo: Todo;
@@ -16,6 +15,8 @@ type Props = {
 
 export const TodoListItem: React.FC<Props> = memo(
   ({todo, openEditTodo, openDeleteTodo}) => {
+    const incompleteIcon = require('assets/inprogress.png');
+    const completeIcon = require('assets/done.png');
     const dispatch = useDispatch();
     const updateTodo = async (completed: boolean) => {
       const response = await fetch(
@@ -47,12 +48,17 @@ export const TodoListItem: React.FC<Props> = memo(
 
     return (
       <ListItem bottomDivider>
-        <Icon
+        {/*  <Icon
           name={todo.completed ? 'checkmark-circle-outline' : 'walk-outline'}
           size={30}
           type="ionicon"
           color={todo.completed ? 'green' : 'blue'}
         />
+ */}
+         <Image style={{width: 34, height: 34 }} source= 
+         {todo.completed? require('assets/done.png') : 
+         require('assets/inprogress.png') }/>
+        
         <ListItem.Content>
           <ListItem.Title
             numberOfLines={3}
@@ -61,20 +67,19 @@ export const TodoListItem: React.FC<Props> = memo(
             {todo.title}
           </ListItem.Title>
         </ListItem.Content>
-        <Icon
+       
+         <Icon
           name="trash-outline"
           type="ionicon"
-          size={25}
+          size={23}
           color="red"
-          onPress={() => openDeleteTodo(todo)}
-        />
-         <Icon
-          name="pencil"
-          type="ionicon"
-          size={25}
-          color="black"
-          onPress={() => openEditTodo(todo)}
-        />
+          onPress={() => openDeleteTodo(todo)}/>
+
+          <TouchableOpacity style={{ padding: 1 }} onPress={() => openEditTodo(todo)}>
+          <Image style={{width: 33, height: 33 }} source={require('assets/edit.png')} />
+        
+        </TouchableOpacity>
+        
         {/* <OptionsMenu
           button={require('assets/edit.png')}
           buttonStyle={{

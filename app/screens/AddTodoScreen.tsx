@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Alert} from 'react-native';
+import {View, StyleSheet, Alert, ScrollView} from 'react-native';
 import {Button, Text} from 'react-native-elements';
 import {Input} from 'components/Input';
 import {Navigation} from 'react-native-navigation';
@@ -37,29 +37,31 @@ export const AddTodoScreen: React.FC<Props> = ({componentId, addTodo}) => {
     Navigation.pop(componentId);
   };
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <Text h3 style={styles.title}>
-          Create Todo
-        </Text>
-        <View style={{alignItems: 'center', marginVertical: 40}}>
-          <Input
-            placeholder="Todo"
-            value={text}
-            onChangeText={setText}
-            multiline
-            onSubmitEditing={addTodo}
-          />
-          <Button
-            title="AddTodo"
-            onPress={handleAddTodo}
-            loading={loading}
-            icon={styles.icon}
-            buttonStyle={styles.button}
-          />
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.content}>
+          <Text h3 style={styles.title}>
+            Create a Todo
+          </Text>
+          <View style={{alignItems: 'center', marginVertical: 40}}>
+            <Input
+              placeholder="Todo"
+              value={text}
+              onChangeText={setText}
+              multiline
+              onSubmitEditing={handleAddTodo}
+            />
+            <Button
+              title="Add Todo"
+              onPress={handleAddTodo}
+              loading={loading}
+              icon={styles.icon}
+              buttonStyle={styles.button}
+            />
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

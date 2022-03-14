@@ -34,16 +34,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 8,
     paddingHorizontal: 20,
-    paddingVertical: 6,
+    paddingVertical: 15,
     marginVertical: 12,
+    marginLeft: 10,
+    marginRight: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height:200
+    height: 100,
   },
   input: {
     fontSize: 16,
-    minHeight: 200,
+    minHeight: 100,
     width: '98%',
+    color: 'black'
   },
 });

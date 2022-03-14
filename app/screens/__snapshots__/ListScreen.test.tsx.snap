@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={[Function]}
+    data={Array []}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    initialNumToRender={15}
+    keyExtractor={[Function]}
+    legacyImplementation={false}
+    maxToRenderPerBatch={3}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onRefresh={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    refreshing={false}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "flex": 1,
+        "height": 500,
+        "padding": 2,
+      }
+    }
+    updateCellsBatchingPeriod={1}
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "white",
+            "flex": 1,
+            "height": 1278,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../app/assets/empty.png",
+            }
+          }
+          style={
+            Object {
+              "height": 280,
+              "width": 300,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+  <Modal
+    animationType="none"
+    deviceHeight={null}
+    deviceWidth={null}
+    hardwareAccelerated={false}
+    hideModalContentWhileAnimating={false}
+    onBackdropPress={[Function]}
+    onModalHide={[Function]}
+    onModalWillHide={[Function]}
+    onModalWillShow={[Function]}
+    onRequestClose={[Function]}
+    panResponderThreshold={4}
+    scrollHorizontal={false}
+    scrollOffset={0}
+    scrollOffsetMax={0}
+    scrollTo={null}
+    statusBarTranslucent={false}
+    supportedOrientations={
+      Array [
+        "portrait",
+        "landscape",
+      ]
+    }
+    swipeThreshold={100}
+    transparent={true}
+    visible={false}
+  />
+</View>
+`;

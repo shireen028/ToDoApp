@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {View, StyleSheet, Alert} from 'react-native';
-import {Button, Text, Switch} from 'react-native-elements';
-import {Input} from 'components';
+import React, {useState, useRef} from 'react';
+import {View, StyleSheet, Alert, Switch, ScrollView} from 'react-native';
+import {Button, Text} from 'react-native-elements';
+import {Input} from 'components/Input';
 import {Todo} from '../types';
 import {Navigation} from 'react-native-navigation';
 
@@ -16,6 +16,7 @@ export const EditTodoScreen: React.FC<Props> = ({
   componentId,
   updateTodo,
 }) => {
+  const switchRef = useRef();
   const [title, setTitle] = useState(todo.title);
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(todo.completed);
@@ -47,40 +48,47 @@ export const EditTodoScreen: React.FC<Props> = ({
     Navigation.pop(componentId);
   };
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <Text h3 style={styles.title}>
-          Edit Todo
-        </Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.content}>
+          <Text h3 style={styles.title}>
+            Edit Todo
+          </Text>
 
-        <View style={{alignItems: 'center', marginVertical: 40}}>
-          <Input
-            placeholder="Edito todo"
-            value={title}
-            onChangeText={setTitle}
-            multiline
-            onSubmitEditing={handleUpdate}
-          />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              minWidth: 200,
-            }}>
-            <Text h4>{completed ? 'Complete' : 'Incomplete'}</Text>
-            <Switch value={completed} onValueChange={setCompleted} />
+          <View style={{alignItems: 'center', marginVertical: 40}}>
+            <Input
+              placeholder="Edito todo"
+              value={title}
+              onChangeText={setTitle}
+              multiline
+              onSubmitEditing={handleUpdate}
+            />
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                minWidth: 200,
+              }}>
+              <Text h4>{completed ? 'Complete' : 'Incomplete'}</Text>
+              <Switch
+                ref={switchRef}
+                trackColor ={{true: 'blue', false: 'grey'}}
+                value={completed}
+                onValueChange={setCompleted}
+              />
+            </View>
+            <Button
+              title="Edit"
+              onPress={handleUpdate}
+              loading={loading}
+              icon={styles.icon}
+              buttonStyle={styles.button}
+            />
           </View>
-          <Button
-            title="Edit"
-            onPress={handleUpdate}
-            loading={loading}
-            icon={styles.icon}
-            buttonStyle={styles.button}
-          />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

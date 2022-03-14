@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Alert,Text,Button} from 'react-native';
-// import {Text, Icon, Button} from 'react-native-elements';
+import {View, StyleSheet, Alert,Image} from 'react-native';
+import {Text, Button} from 'react-native-elements';
 import {Todo} from '../types';
 import {Navigation} from 'react-native-navigation';
 
@@ -44,12 +44,11 @@ export const DeleteTodoScreen: React.FC<Props> = ({
         Delete Todo
       </Text>
       <View style={styles.content}>
-        {/* <Icon
-          name={todo.completed ? 'checkmark-circle-outline' : 'walk-outline'}
-          size={60}
-          type="ionicon"
-          color={todo.completed ? 'green' : 'black'}
-        /> */}
+  
+    <Image style={{width: 40, height: 40 }} source= 
+         {todo.completed? require('assets/done.png') : 
+         require('assets/inprogress.png') }/>
+
         <Text h4 style={styles.title}>
           {todo.title}
         </Text>
@@ -77,6 +76,7 @@ const styles = StyleSheet.create({
   content: {
     padding: 10,
     justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'white',
     height: '60%',
     borderRadius: 10,

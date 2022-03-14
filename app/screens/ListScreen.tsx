@@ -56,7 +56,7 @@ export const ListTodoScreen = (props: {componentId: string}): JSX.Element => {
     );
     const todos = await response.json();
     setRefreshing(false);
-    dispatch(actions.setTodoList(todos));
+    dispatch(actions.setTodoList(todos.slice(0, 30)));
   };
   const openEditTodo = (todo: Todo) => {
     Navigation.push(props.componentId, {
@@ -71,8 +71,8 @@ export const ListTodoScreen = (props: {componentId: string}): JSX.Element => {
         },
         passProps: {
           todo: todo,
-          updateTodo: (_id: number) => {
-            dispatch(actions.updateTodo(_id));
+          updateTodo: (_todo: Todo) => {
+            dispatch(actions.updateTodo(_todo));
           },
         },
       },
@@ -149,9 +149,11 @@ export const ListTodoScreen = (props: {componentId: string}): JSX.Element => {
         style={styles.flatlist}
         refreshing={refreshing}
         onRefresh={loadTodos}
-        data={getTodos().slice(0, 10)}
+        data={getTodos()}
         renderItem={renderItem}
-        keyExtractor={(item: {id: number}) => String(item.id)}
+        keyExtractor={(item: {id: number}, index) =>
+          String(`${index}_${item.id}`)
+        }
         legacyImplementation={false}
         ListEmptyComponent={renderEmpty}
         initialNumToRender={15}
@@ -165,7 +167,7 @@ export const ListTodoScreen = (props: {componentId: string}): JSX.Element => {
               name="close-outline"
               type="ionicon"
               size={50}
-              color="black"
+              color="red"
               onPress={() => setVisible(false)}
             />
           </View>
@@ -181,7 +183,7 @@ export const ListTodoScreen = (props: {componentId: string}): JSX.Element => {
                 value = FILTERS.INCOMPLETE;
               }
               return (
-                <ListItem onPress={() => changeFilter(value)}>
+                <ListItem key={item} onPress={() => changeFilter(value)}>
                   <ListItem.Content>
                     <ListItem.Title
                       style={{color: filter === value ? 'blue' : 'black'}}>

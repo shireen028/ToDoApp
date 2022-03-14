@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "height": 100,
+        "justifyContent": "space-between",
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginVertical": 12,
+        "paddingHorizontal": 20,
+        "paddingVertical": 15,
+      },
+      Object {
+        "borderColor": "#F2EBDD",
+      },
+    ]
+  }
+>
+  <TextInput
+    onBlur={[Function]}
+    onFocus={[Function]}
+    placeholder="Message"
+    style={
+      Object {
+        "color": "black",
+        "fontSize": 16,
+        "minHeight": 100,
+        "width": "98%",
+      }
+    }
+  />
+</View>
+`;

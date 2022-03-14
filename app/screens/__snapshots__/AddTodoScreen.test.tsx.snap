@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+          "padding": 20,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": 10,
+            "minHeight": "60%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#242424",
+              "fontSize": 36,
+              "marginVertical": 20,
+              "textAlign": "center",
+            }
+          }
+        >
+          Create a Todo
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "marginVertical": 40,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "white",
+                  "borderRadius": 8,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "height": 100,
+                  "justifyContent": "space-between",
+                  "marginLeft": 10,
+                  "marginRight": 10,
+                  "marginVertical": 12,
+                  "paddingHorizontal": 20,
+                  "paddingVertical": 15,
+                },
+                Object {
+                  "borderColor": "#F2EBDD",
+                },
+              ]
+            }
+          >
+            <TextInput
+              multiline={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              onFocus={[Function]}
+              onSubmitEditing={[Function]}
+              placeholder="Todo"
+              style={
+                Object {
+                  "color": "black",
+                  "fontSize": 16,
+                  "minHeight": 100,
+                  "width": "98%",
+                }
+              }
+              value=""
+            />
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 3,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "borderRadius": 3,
+                },
+                undefined,
+                false,
+              ]
+            }
+          >
+            <View
+              accessibilityRole="button"
+              accessibilityState={
+                Object {
+                  "busy": false,
+                  "disabled": false,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "blue",
+                    "borderColor": "#2089dc",
+                    "borderRadius": 3,
+                    "borderWidth": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "marginVertical": 50,
+                    "minHeight": 52,
+                    "minWidth": "90%",
+                    "padding": 8,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "marginHorizontal": 5,
+                      "overflow": "hidden",
+                    }
+                  }
+                >
+                  <View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "justifyContent": "center",
+                        }
+                      }
+                    >
+                      <Text
+                        allowFontScaling={false}
+                        selectable={false}
+                        style={
+                          Array [
+                            Object {
+                              "color": "white",
+                              "fontSize": 24,
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                            },
+                            Object {
+                              "fontFamily": "Ionicons",
+                              "fontStyle": "normal",
+                              "fontWeight": "normal",
+                            },
+                            Object {},
+                          ]
+                        }
+                        testID="iconIcon"
+                      >
+                        
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <Text
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": 18,
+                      "paddingVertical": 1,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Add Todo
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

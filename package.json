@@ -13,7 +13,7 @@
     "immutable": "^4.0.0",
     "react": "17.0.2",
     "react-native": "0.67.3",
-    "react-native-elements": "^3.4.2",
+    "react-native-elements": "3.4.2",
     "react-native-gesture-handler": "^2.3.1",
     "react-native-modal": "^13.0.1",
     "react-native-navigation": "^7.26.0",
@@ -44,6 +44,9 @@
     "@types/react": "^17"
   },
   "jest": {
+    "globals": {
+      "__DEV__": true
+    },
     "preset": "react-native",
     "moduleFileExtensions": [
       "ts",
