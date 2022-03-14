@@ -22,7 +22,7 @@ A basic todo app built in react-native using Typescript. Basic functionality inc
 #### Clone & install
 
 * Clone this repo `git clone https://github.com/shireen028/ToDoApp.git`
-* `cd Todo`
+* Run `cd Todo`
 * Run `yarn install`
 * react-native run-ios && react-native run-android
 
