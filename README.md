@@ -1,4 +1,4 @@
-# react-native-todo
+# My Todo List
 
 A basic todo app built in react-native using Typescript. Basic functionality includes:
 
